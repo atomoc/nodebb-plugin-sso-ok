@@ -1,13 +1,14 @@
-# NodeBB Google SSO
+# NodeBB Odnoklassniki SSO
 
-NodeBB Plugin that allows users to login/register via their Google account.
+NodeBB Плагин для авторизации / регистрации за счёт аккаунта интернет сервиса Одноклассники.
 
-## Installation
+## Установка
 
-    npm install nodebb-plugin-sso-google
+    npm install nodebb-plugin-sso-ok
 
-## Configuration
+## Настройка
 
-1. Create a **Google Application** via the [API Console](https://code.google.com/apis/console)
-1. Locate your Client ID and Secret
-1. Set your "Redirect URI" as the domain you access your NodeBB with `/auth/google/callback` appended to it (e.g. `https://forum.mygreatwebsite.com/auth/google/callback`)
+1. Получить права разработчика на <a href="http://ok.ru/devaccess">соответствующей странице</a>
+2. Добавить приложение с типом external
+3. Указать в списке "Redirect URI" ссылку на форум с `/auth/ok/callback`
+4. Заполнить остальные поля
