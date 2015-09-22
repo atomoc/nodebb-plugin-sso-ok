@@ -1,0 +1,37 @@
+{
+  "name": "nodebb-plugin-sso-ok",
+  "version": "1.0.0",
+  "description": "NodeBB Odnoklassniki SSO",
+  "main": "library.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomoc/nodebb-plugin-sso-ok.git"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "google",
+    "sso",
+    "single sign on",
+    "registration"
+  ],
+  "author": "Sergej Saveljev <sergej@eyrini.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomoc/nodebb-plugin-sso-ok/issues"
+  },
+  "dependencies": {
+    "passport-odnoklassniki": "^0.1.6"
+  },
+  "nbbpm": {
+    "compatibility": "^0.6.0 || ^0.7.0 || ^0.8.0"
+  },
+  "homepage": "https://github.com/atomoc/nodebb-plugin-sso-ok#readme",
+  "maintainers": [
+    "atomoc <atomoc@gmail.com>"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

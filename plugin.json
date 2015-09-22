@@ -1,0 +1,17 @@
+{
+	"id": "nodebb-plugin-sso-ok",
+	"name": "NodeBB Odnoklassniki SSO",
+	"description": "NodeBB Plugin that allows users to login/register via their Odnoklassniki account.",
+	"url": "https://github.com/julianlam/nodebb-plugin-sso-ok",
+	"library": "./library.js",
+	"templates": "templates",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:auth.init", "method": "getStrategy" },
+		{ "hook": "filter:admin.header.build", "method": "addMenuItem" },
+		{ "hook": "filter:user.delete", "method": "deleteUserData" }
+	],
+	"scripts": [
+		"static/lib/admin.js"
+	]
+}
