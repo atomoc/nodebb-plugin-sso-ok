@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-sso-ok",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NodeBB Odnoklassniki SSO",
   "main": "library.js",
   "repository": {
@@ -21,7 +21,7 @@
     "url": "https://github.com/atomoc/nodebb-plugin-sso-ok/issues"
   },
   "dependencies": {
-    "passport-odnoklassniki": "^0.1.6"
+    "passport-ok": "^0.1.x"
   },
   "nbbpm": {
     "compatibility": "^0.6.0 || ^0.7.0 || ^0.8.0"
