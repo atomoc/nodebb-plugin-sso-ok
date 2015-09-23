@@ -5,7 +5,7 @@
 		meta = module.parent.require('./meta'),
 		db = module.parent.require('../src/database'),
 		passport = module.parent.require('passport'),
-  		passportOk = require('passport-odnoklassniki').Strategy,
+  		passportOk = require('passport-ok').Strategy,
   		nconf = module.parent.require('nconf'),
         async = module.parent.require('async');
 
