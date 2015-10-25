@@ -7,13 +7,15 @@
 		passport = module.parent.require('passport'),
   		passportOk = require('passport-ok').Strategy,
   		nconf = module.parent.require('nconf'),
-        async = module.parent.require('async');
+        async = module.parent.require('async'),
+        gm = require('gm'),
+        https = require('https');
 
 	var constants = Object.freeze({
 		'name': "Ok",
 		'admin': {
 			'route': '/plugins/sso-ok',
-			'icon': 'fa-odnoklassniki'
+			'icon': 'fa-odnoklassniki-square'
 		}
 	});
 
@@ -57,7 +59,7 @@
 					name: 'odnoklassniki',
 					url: '/auth/ok',
 					callbackURL: '/auth/ok/callback',
-					icon: 'fa-key fa-odnoklassniki'/*,
+					icon: 'fa-key fa-odnoklassniki-square'/*,
 					scope: 'email'*/
 				});
 			}
@@ -89,8 +91,17 @@
 
 						// Save their photo, if present
 						if (picture) {
-							User.setUserField(uid, 'uploadedpicture', picture);
-							User.setUserField(uid, 'picture', picture);
+							var im = handle.toLowerCase().replace(' ', '_')+'.jpg';
+							https.get(picture, function(res){
+								gm(res, picture).resize(null, 128).crop(128, 128, 8).
+									write(nconf.get('base_dir')+'/public'+nconf.get('upload_url')+'profile/'+im, function(err){
+										if (!err){
+											im = nconf.get('upload_url')+'profile/'+im;
+											User.setUserField(uid, 'uploadedpicture', im);
+											User.setUserField(uid, 'picture', im);
+										}
+									});
+							});
 						}
 
 						callback(null, {
